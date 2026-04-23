@@ -6,7 +6,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --no-fund --no-audit
 
+<<<<<<< HEAD
 # Step 3: Build the NestJS app (TypeScript -> Javascript)
+=======
+# Step 3: Build the NestJS app (TypeScript -> JavaScript)
+>>>>>>> 090afaa3c9689a87a10a92dab32bc1df71a88c63
 COPY . .
 RUN npm run build
 
@@ -18,4 +22,9 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
 
 EXPOSE 3000
+<<<<<<< HEAD
 CMD ["node", "dist/main"]
+=======
+CMD ["node", "dist/main"]	
+
+>>>>>>> 090afaa3c9689a87a10a92dab32bc1df71a88c63
